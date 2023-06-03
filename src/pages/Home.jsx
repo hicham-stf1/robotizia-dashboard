@@ -26,7 +26,7 @@ function Home() {
   const getAllStatistic = async () => {
     setVisible(true)
     try {
-      await axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/statistics/subscription/Graph").then(res => {
+      await axios.get("https://api.robotizia.ai/statistics/subscription/Graph").then(res => {
 
         dispatch(setStatistics(res?.data))
         // console.log("Statistic :" + res?.data)
@@ -48,7 +48,7 @@ function Home() {
   const getAllStatistic2 = async () => {
     setVisible(true)
     try {
-      await axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/statistics/client/Graph").then(res => {
+      await axios.get("https://api.robotizia.ai/statistics/client/Graph").then(res => {
 
         dispatch(setRatio(res?.data))
       }).catch((error) => {

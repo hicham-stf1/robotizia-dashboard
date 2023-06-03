@@ -35,12 +35,16 @@ function AddAdmin() {
         const { email, password } = values;
         setIsVisible(true)
         await axios.post(
-            'https://king-prawn-app-n4y9m.ondigitalocean.app/auth/user/signup',
+            'https://api.robotizia.ai/auth/user/newadmin',
             {
                 email: email,
                 password: password,
-                role: "Admin"
-            }
+                role: "Admin",
+                first_name: "username",
+                last_name: "last_name",
+                username: "username"
+            },
+
         ).then((res) => {
 
             setSuccessful(true)
@@ -56,9 +60,9 @@ function AddAdmin() {
         })
 
         setIsVisible(false)
-        setTimeout(() => {
-            dispatch(clearMessage())
-        }, 3000);
+        // setTimeout(() => {
+        // dispatch(clearMessage())
+        // }, 3000);
     };
 
     useEffect(() => {

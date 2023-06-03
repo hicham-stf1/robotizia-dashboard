@@ -44,7 +44,7 @@ function Signup() {
     // }
     await axios
       .post(
-        "https://king-prawn-app-n4y9m.ondigitalocean.app/auth/client/local/signup",
+        "https://api.robotizia.ai/auth/client/local/signup",
         {
           first_name: firstName,
           last_name: lastName,
@@ -67,8 +67,8 @@ function Signup() {
             (error.response &&
               error.response.data &&
               error.response.data.message) ||
-              error.message ||
-              error.toString()
+            error.message ||
+            error.toString()
           )
         );
       });

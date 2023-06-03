@@ -58,6 +58,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
     sidebarOpen && !sidebarExpanded && setSidebarExpanded(true);
   }, [sidebarOpen]);
 
+
   return (
     <div>
       {/* Sidebar backdrop (mobile only) */}
@@ -272,7 +273,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 </NavLink>
               </li>
               {/* New Admin */}
-              {/* <li
+              <li
                 className={`px-3 py-3 last:mb-0 ${pathname.includes("add-new-admin") ? "bg-white rounded-l-full" : ""
                   }`}
               >
@@ -300,7 +301,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     </span>
                   </div>
                 </NavLink>
-              </li> */}
+              </li>
 
 
               <li

@@ -27,7 +27,7 @@ function PricingTables() {
 
   // useEffect(() => {
   //   setIsVisible(true)
-  //   axios.post('https://king-prawn-app-n4y9m.ondigitalocean.app/payment/subscription/initial',
+  //   axios.post('https://api.robotizia.ai/payment/subscription/initial',
   //     {
   //       plan: "Basic",
   //       frequency: priceOutput.plan1[value][1] && priceOutput.plan1[value][1] === "18" ? "Monthly" : "Annually",
@@ -63,7 +63,7 @@ function PricingTables() {
   console.log(user);
 
   // useEffect(async () => {
-  //   axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/users/find/" + user[1]).then((res) => {
+  //   axios.get("https://api.robotizia.ai/users/find/" + user[1]).then((res) => {
   //     setUserData(res?.data)
   //   }).catch((error) => {
   //     console.log(error.response &&
@@ -81,7 +81,7 @@ function PricingTables() {
   useEffect(() => {
     axios
       .get(
-        "https://king-prawn-app-n4y9m.ondigitalocean.app/users/find/" + user?.id
+        "https://api.robotizia.ai/users/find/" + user?.id
       )
       .then((res) => {
         if (res.data.subscriptionId) {
@@ -250,39 +250,39 @@ function PricingTables() {
                       setIsVisible(true);
                       isLoggedIn
                         ? await axios
-                            .post(
-                              "https://king-prawn-app-n4y9m.ondigitalocean.app/payment/subscription/initial",
-                              {
+                          .post(
+                            "https://api.robotizia.ai/payment/subscription/initial",
+                            {
+                              plan: "Basic",
+                              frequency: frequency,
+                              email: user?.email,
+                            }
+                          )
+                          .then((res) => {
+                            navigate("/payment");
+                            dispatch(
+                              setClientSecret({
                                 plan: "Basic",
                                 frequency: frequency,
                                 email: user?.email,
-                              }
-                            )
-                            .then((res) => {
-                              navigate("/payment");
-                              dispatch(
-                                setClientSecret({
-                                  plan: "Basic",
-                                  frequency: frequency,
-                                  email: user?.email,
-                                  clientsecret: res?.data.client_secret,
-                                })
-                              );
-                            })
-                            .catch((error) => {
-                              dispatch(
-                                setMessage(
-                                  error.response &&
-                                    error.response.data &&
-                                    error.response.data.message
-                                ) ||
-                                  error.message ||
-                                  error.toString()
-                              );
-                              setTimeout(() => {
-                                dispatch(clearMessage());
-                              }, 5000);
-                            })
+                                clientsecret: res?.data.client_secret,
+                              })
+                            );
+                          })
+                          .catch((error) => {
+                            dispatch(
+                              setMessage(
+                                error.response &&
+                                error.response.data &&
+                                error.response.data.message
+                              ) ||
+                              error.message ||
+                              error.toString()
+                            );
+                            setTimeout(() => {
+                              dispatch(clearMessage());
+                            }, 5000);
+                          })
                         : navigate("/signin");
                       setIsVisible(false);
                     }}
@@ -392,39 +392,39 @@ function PricingTables() {
                       setIsVisible(true);
                       isLoggedIn
                         ? await axios
-                            .post(
-                              "https://king-prawn-app-n4y9m.ondigitalocean.app/payment/subscription/initial",
-                              {
-                                plan: "Basic",
+                          .post(
+                            "https://api.robotizia.ai/payment/subscription/initial",
+                            {
+                              plan: "Basic",
+                              frequency: frequency,
+                              email: user?.email,
+                            }
+                          )
+                          .then((res) => {
+                            navigate("/payment");
+                            dispatch(
+                              setClientSecret({
+                                plan: "Premium",
                                 frequency: frequency,
                                 email: user?.email,
-                              }
-                            )
-                            .then((res) => {
-                              navigate("/payment");
-                              dispatch(
-                                setClientSecret({
-                                  plan: "Premium",
-                                  frequency: frequency,
-                                  email: user?.email,
-                                  clientsecret: res?.data.client_secret,
-                                })
-                              );
-                            })
-                            .catch((error) => {
-                              dispatch(
-                                setMessage(
-                                  error.response &&
-                                    error.response.data &&
-                                    error.response.data.message
-                                ) ||
-                                  error.message ||
-                                  error.toString()
-                              );
-                              setTimeout(() => {
-                                dispatch(clearMessage());
-                              }, 5000);
-                            })
+                                clientsecret: res?.data.client_secret,
+                              })
+                            );
+                          })
+                          .catch((error) => {
+                            dispatch(
+                              setMessage(
+                                error.response &&
+                                error.response.data &&
+                                error.response.data.message
+                              ) ||
+                              error.message ||
+                              error.toString()
+                            );
+                            setTimeout(() => {
+                              dispatch(clearMessage());
+                            }, 5000);
+                          })
                         : navigate("/signin");
                       setIsVisible(false);
                     }}
@@ -541,39 +541,39 @@ function PricingTables() {
                       setIsVisible(true);
                       isLoggedIn
                         ? await axios
-                            .post(
-                              "https://king-prawn-app-n4y9m.ondigitalocean.app/payment/subscription/initial",
-                              {
-                                plan: "Basic",
+                          .post(
+                            "https://api.robotizia.ai/payment/subscription/initial",
+                            {
+                              plan: "Basic",
+                              frequency: frequency,
+                              email: user?.email,
+                            }
+                          )
+                          .then((res) => {
+                            navigate("/payment");
+                            dispatch(
+                              setClientSecret({
+                                plan: "Gold",
                                 frequency: frequency,
                                 email: user?.email,
-                              }
-                            )
-                            .then((res) => {
-                              navigate("/payment");
-                              dispatch(
-                                setClientSecret({
-                                  plan: "Gold",
-                                  frequency: frequency,
-                                  email: user?.email,
-                                  clientsecret: res?.data.client_secret,
-                                })
-                              );
-                            })
-                            .catch((error) => {
-                              dispatch(
-                                setMessage(
-                                  error.response &&
-                                    error.response.data &&
-                                    error.response.data.message
-                                ) ||
-                                  error.message ||
-                                  error.toString()
-                              );
-                              setTimeout(() => {
-                                dispatch(clearMessage());
-                              }, 5000);
-                            })
+                                clientsecret: res?.data.client_secret,
+                              })
+                            );
+                          })
+                          .catch((error) => {
+                            dispatch(
+                              setMessage(
+                                error.response &&
+                                error.response.data &&
+                                error.response.data.message
+                              ) ||
+                              error.message ||
+                              error.toString()
+                            );
+                            setTimeout(() => {
+                              dispatch(clearMessage());
+                            }, 5000);
+                          })
                         : navigate("/signin");
                       setIsVisible(false);
                     }}

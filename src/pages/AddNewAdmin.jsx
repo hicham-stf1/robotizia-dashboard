@@ -16,45 +16,14 @@ import AddAdmin from "../components/AddAdmin";
 function AddNewAdmin() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
-    const [selectedItems, setSelectedItems] = useState([]);
 
     const [visible, setVisible] = useState()
 
-    const handleSelectedItems = (selectedItems) => {
-        setSelectedItems([...selectedItems]);
-    };
 
     const dispatch = useDispatch();
     const { message } = useSelector((state) => state.message)
 
-    //Get all users
-    const [users, setUsers] = useState([])
-    const getAllUsers = async () => {
-        setVisible(true)
-        try {
-            await axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/subscription/findall").then(res => {
-                setUsers(res?.data)
-                console.log("SubscriptionTable :" + res?.data)
-            }).catch((error) => {
-                dispatch(setMessage((error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                    error.message ||
-                    error.toString()))
-            })
-        } catch (error) {
-            dispatch(setMessage((error.response &&
-                error.response.data &&
-                error.response.data.message) ||
-                error.message ||
-                error.toString()))
-        }
-        setVisible(false)
-    }
 
-    useEffect(() => {
-        getAllUsers()
-    }, [])
 
     useEffect(() => {
         dispatch(clearMessage())
@@ -78,7 +47,8 @@ function AddNewAdmin() {
                             <div className="mb-4 sm:mb-0">
                                 <h1 className="text-2xl md:text-3xl text-slate-800 font-bold">
                                     Add New Admin ✨
-                                </h1> <AddAdmin />
+                                </h1>
+                                <AddAdmin />
                             </div>
 
                         </div>

@@ -51,7 +51,7 @@ function Blog() {
   const getAllBlogs = async () => {
     setVisible(true)
     try {
-      await axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/blog/findall").then(res => {
+      await axios.get("https://api.robotizia.ai/blog/findall").then(res => {
         setBlogs(res?.data)
         console.log("blogs :" + JSON.stringify(res?.data))
       }).catch((error) => {
@@ -84,12 +84,12 @@ function Blog() {
       formData.append("file", files[0], files[0]?.name);
       await axios
         .post(
-          `https://king-prawn-app-n4y9m.ondigitalocean.app/files/upload`,
+          `https://api.robotizia.ai/files/upload`,
           formData
         )
         .then((res) => {
           setVisible(true)
-          axios.post("https://king-prawn-app-n4y9m.ondigitalocean.app/blog/create",
+          axios.post("https://api.robotizia.ai/blog/create",
             {
               title: title,
               description: content,

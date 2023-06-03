@@ -22,7 +22,7 @@ function ProfileBody() {
   const getUserData = () => {
     axios
       .get(
-        "https://king-prawn-app-n4y9m.ondigitalocean.app/users/find/" + user.id
+        "https://api.robotizia.ai/users/find/" + user.id
       )
       .then((res) => {
         setUserdata(res.data);
@@ -64,8 +64,8 @@ function ProfileBody() {
   useEffect(() => {
     axios
       .post(
-        "https://king-prawn-app-n4y9m.ondigitalocean.app/users/picture/update/" +
-          user.id,
+        "https://api.robotizia.ai/users/picture/update/" +
+        user.id,
         {
           urlPhoto:
             "https://t4.ftcdn.net/jpg/05/27/83/41/360_F_527834146_oGOiPzNuHZnXiUN4QNm55zn6Ao9fmrJT.jpg",
@@ -85,11 +85,10 @@ function ProfileBody() {
           <li className="mr-8 mt-2">
             <button
               onClick={() => setSelectedTab(0)}
-              className={`inline-flex items-center border-[2px] border-[#293fd2] justify-center text-sm font-medium leading-5 rounded-full px-8 py-2 border border-transparent shadow-sm text-white duration-150 ease-in-out uppercase ${
-                selectedTab === 0
+              className={`inline-flex items-center border-[2px] border-[#293fd2] justify-center text-sm font-medium leading-5 rounded-full px-8 py-2 border border-transparent shadow-sm text-white duration-150 ease-in-out uppercase ${selectedTab === 0
                   ? "bg-[#2e46e8] text-white"
                   : "bg-white text-[#2e46e8] "
-              }`}
+                }`}
             >
               EDIT PROFILE
             </button>
@@ -97,11 +96,10 @@ function ProfileBody() {
           <li className="mr-8 mt-2">
             <button
               onClick={() => setSelectedTab(1)}
-              className={`inline-flex items-center border-[2px] border-[#293fd2] justify-center text-sm font-medium leading-5 rounded-full px-8 py-2 border border-transparent shadow-sm text-white duration-150 ease-in-out uppercase ${
-                selectedTab === 1
+              className={`inline-flex items-center border-[2px] border-[#293fd2] justify-center text-sm font-medium leading-5 rounded-full px-8 py-2 border border-transparent shadow-sm text-white duration-150 ease-in-out uppercase ${selectedTab === 1
                   ? "bg-[#2e46e8] text-white"
                   : "bg-white text-[#2e46e8] "
-              }`}
+                }`}
             >
               ACCOUNT SETTINGS
             </button>
@@ -109,11 +107,10 @@ function ProfileBody() {
           <li className="mr-8 mt-2">
             <button
               onClick={() => setSelectedTab(2)}
-              className={`inline-flex items-center border-[2px] border-[#293fd2] justify-center text-sm font-medium leading-5 rounded-full px-8 py-2 border border-transparent shadow-sm text-white duration-150 ease-in-out uppercase ${
-                selectedTab === 2
+              className={`inline-flex items-center border-[2px] border-[#293fd2] justify-center text-sm font-medium leading-5 rounded-full px-8 py-2 border border-transparent shadow-sm text-white duration-150 ease-in-out uppercase ${selectedTab === 2
                   ? "bg-[#2e46e8] text-white"
                   : "bg-white text-[#2e46e8] "
-              }`}
+                }`}
             >
               CHANGE PASSWORD
             </button>
@@ -122,11 +119,10 @@ function ProfileBody() {
             <li className="mr-8 mt-2">
               <button
                 onClick={() => setSelectedTab(3)}
-                className={`inline-flex items-center border-[2px] border-[#293fd2] justify-center text-sm font-medium leading-5 rounded-full px-8 py-2 border border-transparent shadow-sm text-white duration-150 ease-in-out uppercase ${
-                  selectedTab === 3
+                className={`inline-flex items-center border-[2px] border-[#293fd2] justify-center text-sm font-medium leading-5 rounded-full px-8 py-2 border border-transparent shadow-sm text-white duration-150 ease-in-out uppercase ${selectedTab === 3
                     ? "bg-[#2e46e8] text-white"
                     : "bg-white text-[#2e46e8] "
-                }`}
+                  }`}
               >
                 SUBSCRIPTONS
               </button>

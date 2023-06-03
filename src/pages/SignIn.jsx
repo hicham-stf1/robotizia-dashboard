@@ -33,14 +33,17 @@ function Signin() {
     const { email, password } = values;
     setIsVisible(true)
     await axios.post(
-      'https://plankton-app-q74hx.ondigitalocean.app/auth/user/login',
+      'https://api.robotizia.ai/auth/user/login',
       {
         email: email,
-        password: password
+        password: password,
+        first_name: "username",
+        last_name: "last_name",
+        username: "username"
       }
     ).then((res) => {
 
-      // axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/users/find/" + res?.data[1]).then(res => {
+      // axios.get("https://api.robotizia.ai/users/find/" + res?.data[1]).then(res => {
       //   dispatch(setUserData({ ...res.data, password: "" }))
       dispatch(switchLoginStatus())
       navigate('/')

@@ -54,6 +54,7 @@ function DashboardCard08() {
     ],
   };
 
+
   return (
     <div className="flex flex-col col-span-full sm:col-span-6 bg-white shadow-lg rounded-sm border border-slate-200">
       <header className="px-5 py-4 border-b border-slate-100 flex items-center">
@@ -63,7 +64,7 @@ function DashboardCard08() {
       </header>
       {/* Chart built with Chart.js 3 */}
       {/* Change the height attribute to adjust the chart height */}
-      <LineChart data={chartData} width={595} height={248} />
+      <LineChart total={statistics?.sales?.total} data={chartData} width={595} height={248} />
     </div>
   );
 }

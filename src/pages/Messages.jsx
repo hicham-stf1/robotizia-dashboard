@@ -20,7 +20,7 @@ function Messages() {
     const getAllMessages = async () => {
         setVisible(true)
         try {
-            await axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/contact-us/findAll").then(res => {
+            await axios.get("https://api.robotizia.ai/contact-us/findAll").then(res => {
                 setMessages(res?.data)
                 console.log("messages :" + JSON.stringify(res?.data))
             }).catch((error) => {

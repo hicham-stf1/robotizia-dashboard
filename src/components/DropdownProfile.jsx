@@ -53,7 +53,7 @@ function DropdownProfile({ align }) {
   useEffect(() => {
     axios
       .get(
-        "https://king-prawn-app-n4y9m.ondigitalocean.app/users/find/" + user?.id
+        "https://api.robotizia.ai/users/find/" + user?.id
       )
       .then((res) => {
         setUserdata(res.data);

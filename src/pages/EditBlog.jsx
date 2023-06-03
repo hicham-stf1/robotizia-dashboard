@@ -24,7 +24,7 @@ function EditBlog() {
     const getBlogData = async () => {
         setVisible(true)
         try {
-            await axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/blog/" + Id).then(res => {
+            await axios.get("https://api.robotizia.ai/blog/" + Id).then(res => {
                 setBlog(res?.data)
                 setBlogData(res?.data)
                 console.log("blog :" + JSON.stringify(res?.data))
@@ -56,7 +56,7 @@ function EditBlog() {
     const deleteBlog = async () => {
         setDeleting(true)
         try {
-            await axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/blog/delete/" + Id).then(res => {
+            await axios.get("https://api.robotizia.ai/blog/delete/" + Id).then(res => {
                 navigate('/blog')
                 console.log("blog :" + JSON.stringify(res?.data))
             }).catch((error) => {
@@ -107,12 +107,12 @@ function EditBlog() {
             formData.append("file", files[0], files[0]?.name);
             await axios
                 .post(
-                    `https://king-prawn-app-n4y9m.ondigitalocean.app/files/upload`,
+                    `https://api.robotizia.ai/files/upload`,
                     formData
                 )
                 .then((res) => {
                     setVisible(true)
-                    axios.post("https://king-prawn-app-n4y9m.ondigitalocean.app/blog/update/" + Id,
+                    axios.post("https://api.robotizia.ai/blog/update/" + Id,
                         {
                             title: title,
                             description: content,

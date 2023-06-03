@@ -32,7 +32,7 @@ function Subscriptions() {
   const getAllUsers = async () => {
     setVisible(true)
     try {
-      await axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/statistics/subscription/findall").then(res => {
+      await axios.get("https://api.robotizia.ai/statistics/subscription/findall").then(res => {
         setUsers(res?.data)
         console.log("SubscriptionTable :" + res?.data)
       }).catch((error) => {

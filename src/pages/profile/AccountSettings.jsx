@@ -19,7 +19,7 @@ function AccountSettings({ userData, getUserData }) {
     e.preventDefault();
     axios
       .post(
-        "https://king-prawn-app-n4y9m.ondigitalocean.app/users/username/update/" +
+        "https://api.robotizia.ai/users/username/update/" +
         user.id,
         {
           username: values.username,
@@ -66,7 +66,7 @@ function AccountSettings({ userData, getUserData }) {
     } else {
       axios
         .post(
-          "https://king-prawn-app-n4y9m.ondigitalocean.app/users/email/update/" +
+          "https://api.robotizia.ai/users/email/update/" +
           user.id,
           {
             new_email: values.email,

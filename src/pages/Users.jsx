@@ -32,7 +32,7 @@ function Users() {
   const getAllUsers = async () => {
     setVisible(true)
     try {
-      await axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/statistics/client/findAll").then(res => {
+      await axios.get("https://api.robotizia.ai/statistics/client/findAll").then(res => {
         setUsers(res?.data.users)
         console.log(res?.data)
       }).catch((error) => {

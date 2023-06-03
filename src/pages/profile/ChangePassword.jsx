@@ -18,7 +18,7 @@ function ChangePassword() {
     e.preventDefault();
     axios
       .post(
-        "https://king-prawn-app-n4y9m.ondigitalocean.app/users/password/update/" +
+        "https://api.robotizia.ai/users/password/update/" +
         user.id,
         {
           old_password: values.oldPwd,

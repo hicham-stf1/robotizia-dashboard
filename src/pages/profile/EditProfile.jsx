@@ -20,7 +20,7 @@ function EditProfile({ userData, getUserData }) {
     e.preventDefault();
     axios
       .post(
-        "https://king-prawn-app-n4y9m.ondigitalocean.app/users/profile/update/" +
+        "https://api.robotizia.ai/users/profile/update/" +
         user.id,
         {
           first_name: values.firstName,

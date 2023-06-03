@@ -19,7 +19,7 @@ function DashboardCard07() {
   const [users, setUsers] = useState([])
   const [visible, setIsVisible] = useState(false)
   const getLatestUsers = async () => {
-    await axios.get("https://king-prawn-app-n4y9m.ondigitalocean.app/statistics/client/latestCustomers").then((response) => {
+    await axios.get("https://api.robotizia.ai/statistics/client/latestCustomers").then((response) => {
       setUsers(response?.data?.users)
     }).catch((error) => {
       console.log(error.messages)
